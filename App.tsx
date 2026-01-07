@@ -6,19 +6,22 @@ import {
   ShieldCheck, 
   Menu,
   X,
-  FileText
+  FileText,
+  Lock
 } from 'lucide-react';
 import Simulator from './components/Simulator';
 import ProductInfo from './components/ProductInfo';
 import CampaignDetails from './components/CampaignDetails';
 import CostsOverview from './components/CostsOverview';
+import AssetProtection from './components/AssetProtection';
 
 const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'simulator' | 'info' | 'campaign' | 'costs'>('simulator');
+  const [activeTab, setActiveTab] = useState<'simulator' | 'info' | 'campaign' | 'costs' | 'protection'>('simulator');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const tabs = [
     { id: 'simulator', label: 'Simulatore', icon: Calculator },
+    { id: 'protection', label: 'Protezione', icon: Lock },
     { id: 'info', label: 'Caratteristiche', icon: Info },
     { id: 'campaign', label: 'Campagna Bonus', icon: ShieldCheck },
     { id: 'costs', label: 'Costi e Penali', icon: FileText },
@@ -44,7 +47,7 @@ const App: React.FC = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-white text-[#003399] shadow-sm'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
@@ -99,6 +102,7 @@ const App: React.FC = () => {
           {activeTab === 'info' && <ProductInfo />}
           {activeTab === 'campaign' && <CampaignDetails />}
           {activeTab === 'costs' && <CostsOverview />}
+          {activeTab === 'protection' && <AssetProtection />}
         </div>
       </main>
 

@@ -65,9 +65,6 @@ const ProductInfo: React.FC = () => {
               Revisione completa dell'offerta finanziaria con nuovi advisor globali: Morgan Stanley (Prudente), DWS (Moderata), Vontobel (ESG) e Pictet (Dinamica).
             </p>
           </div>
-          <button className="px-6 py-3 bg-white text-[#003399] font-bold rounded-xl whitespace-nowrap">
-            Scarica Scheda Prodotto (PDF)
-          </button>
         </div>
         <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none">
           <Shield size={200} />
